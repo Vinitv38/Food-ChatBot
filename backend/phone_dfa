@@ -1,0 +1,19 @@
+digraph PhoneDFA {
+	rankdir=LR
+	S0 [label=S0 shape=circle]
+	S1 [label=S1 shape=doublecircle]
+	S2 [label=S2 shape=doublecircle]
+	S3 [label=S3 shape=doublecircle]
+	S4 [label=S4 shape=doublecircle]
+	S0 -> S1 [label="("]
+	S0 -> S2 [label="+, digit"]
+	S0 -> S3 [label=digit]
+	S0 -> S4 [label=other]
+	S1 -> S1 [label=digit]
+	S1 -> S4 [label="-"]
+	S2 -> S2 [label=digit]
+	S2 -> S4 [label="-, space"]
+	S3 -> S3 [label=digit]
+	S3 -> S4 [label="-"]
+	S4 -> S4 [label=any]
+}
